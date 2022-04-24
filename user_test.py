@@ -17,13 +17,13 @@ class TestUser(unittest.TestCase):
         '''
         self.new_user = User('Bambi', '1234') # create user object
 
-#     def test_init(self):
-#         '''
-#         test_init test case to test if the object is initialized properly
-#         '''
+    def test_init(self):
+        '''
+        test_init test case to test if the object is initialized properly
+        '''
 
-#         self.assertEqual(self.new_user.username,"Bambi")
-#         self.assertEqual(self.new_user.password,"1234")
+        self.assertEqual(self.new_user.username,"Bambi")
+        self.assertEqual(self.new_user.password,"1234")
 
 # if __name__ == '__main__':
 #     unittest.main()
