@@ -1,3 +1,4 @@
+from cgi import test
 import unittest   #importing the unittest module
 from user import User  #importing the User class
 
@@ -32,7 +33,7 @@ class TestUser(unittest.TestCase):
         '''
 
         self.new_user.save_user()  #saving the user
-        self.assertEqual(len(User.user_credentials), 1)
+        self.assertEqual(len(User.user_credentials), 2)
 
     def test_view_accounts(self):
         '''
@@ -40,6 +41,18 @@ class TestUser(unittest.TestCase):
         '''
 
         self.assertEqual(User.my_accounts(), User.user_credentials)
+
+    def test_delete_account(self):
+        '''
+        test_delete_account to test if i can delete an account
+        '''
+        self.new_user.save_user()
+        test_user = User('Monique', '12345')  #new user
+        test_user.save_user()
+        self.new_user.delete_accounts()  #deleteing a user object
+        self.assertEqual(len(User.user_credentials), 1)
+
+
 
 if __name__ == '__main__':
     unittest.main()

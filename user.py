@@ -22,3 +22,10 @@ class User:
         method that returns the user_credentials
         '''
         return cls.user_credentials
+
+
+    # def delete_accounts(self):
+    #     '''
+    #     method that deletes an account
+    #     '''
+    #     User.user_credentials.remove(self)
