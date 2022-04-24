@@ -15,3 +15,10 @@ class User:
         save_user method saves user objects into user_credentials
         '''
         User.user_credentials.append(self)
+
+    @classmethod
+    def my_accounts(cls):
+        '''
+        method that returns the user_credentials
+        '''
+        return cls.user_credentials

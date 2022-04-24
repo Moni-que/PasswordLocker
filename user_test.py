@@ -39,7 +39,7 @@ class TestUser(unittest.TestCase):
         test_view_accounts to test if i can view all my accounts
         '''
 
-        self.assertEqual(User.accounts(), User.user_credentials)
+        self.assertEqual(User.my_accounts(), User.user_credentials)
 
 if __name__ == '__main__':
     unittest.main()
