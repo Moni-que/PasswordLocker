@@ -18,6 +18,7 @@ class TestUser(unittest.TestCase):
         '''
         self.new_user = User('Bambi', '1234') # create user object
 
+
     def test_init(self):
         '''
         test_init test case to test if the object is initialized properly
@@ -33,24 +34,32 @@ class TestUser(unittest.TestCase):
         '''
 
         self.new_user.save_user()  #saving the user
-        self.assertEqual(len(User.user_credentials), 2)
+        self.assertEqual(len(User.user_credentials), 1)
 
-    def test_view_accounts(self):
+    def test_display_accounts(self):
         '''
         test_view_accounts to test if i can view all my accounts
         '''
 
         self.assertEqual(User.my_accounts(), User.user_credentials)
 
+    def test_find_accounts(self):
+        self.new_user.save_user()
+        test_user = User('Bambi', '1234')
+        test_user.save_user()
+        found_account = User.find_by_username('Bambi')
+        self.assertEqual(found_account.password, test_user.password)
+
     def test_delete_account(self):
         '''
         test_delete_account to test if i can delete an account
         '''
         self.new_user.save_user()
-        test_user = User('Monique', '12345')  #new user
+        test_user = User('username', 'password')  #new user
         test_user.save_user()
         self.new_user.delete_accounts()  #deleteing a user object
         self.assertEqual(len(User.user_credentials), 1)
+
 
 
 

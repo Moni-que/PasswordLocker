@@ -24,6 +24,17 @@ class User:
         return cls.user_credentials
 
 
+    @classmethod
+    def find_by_username(cls, username):
+        '''
+        Method that takes in a username and returns an account that matches that username.
+        '''
+
+        for account in cls.user_credentials:
+            if account.username == username:
+                return account 
+
+
     def delete_accounts(self):
         '''
         method that deletes an account
