@@ -29,7 +29,6 @@ class User:
         '''
         Method that takes in a username and returns an account that matches that username.
         '''
-
         for account in cls.user_credentials:
             if account.username == username:
                 return account 

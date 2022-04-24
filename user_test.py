@@ -19,6 +19,12 @@ class TestUser(unittest.TestCase):
         self.new_user = User('Bambi', '1234') # create user object
 
 
+    def tearDown(self):
+            
+        User.user_credentials = []
+
+
+
     def test_init(self):
         '''
         test_init test case to test if the object is initialized properly
@@ -36,12 +42,22 @@ class TestUser(unittest.TestCase):
         self.new_user.save_user()  #saving the user
         self.assertEqual(len(User.user_credentials), 1)
 
+
+    def test_save_many_users(self):
+        self.new_user.save_user()
+        test_user = User('username', 'password')
+        test_user.save_user()
+
+        self.assertEqual(len(User.user_credentials), 2)
+
     def test_display_accounts(self):
         '''
         test_view_accounts to test if i can view all my accounts
         '''
 
         self.assertEqual(User.my_accounts(), User.user_credentials)
+
+
 
     def test_find_accounts(self):
         self.new_user.save_user()
