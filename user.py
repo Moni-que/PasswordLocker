@@ -84,12 +84,12 @@ class Credentials:
 
             print(password) #printing the password
 
-    # @classmethod
-    # def check_account(cls, username):
-    #     for account in cls.user_createAccount:
-    #         if account.username == username:
-    #             return True
-    #     return False 
+    @classmethod
+    def check_account(cls, username):
+        for account in cls.user_createAccount:
+            if account.username == username:
+                return True
+        return False 
 
 
 
