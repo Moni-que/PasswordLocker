@@ -17,7 +17,7 @@ class TestUser(unittest.TestCase):
         self.new_user = User('Bambi', '1234') # create user object
 
 
-    def tearDown(self):
+    def tearDown(self):  #code to be excecuted before each test case in order to clean up after each test case has run
             
         User.user_credentials = []
 
@@ -77,6 +77,7 @@ class TestUser(unittest.TestCase):
 
 
 from user import Credentials  #importing Credentials class
+
 class testCredentials(unittest.TestCase):
      '''
     Test class that defines test cases for the credentials class behaviours
@@ -86,6 +87,10 @@ class testCredentials(unittest.TestCase):
 
      def setup(self):
         self.new_account = Credentials('Bambi', '1234')
+
+     def teardown(self):  #code to be excecuted before each test case in order to clean up after each test case has run
+         Credentials.user_createAccount = []
+
 
 
 
