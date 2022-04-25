@@ -9,19 +9,15 @@ class TestUser(unittest.TestCase):
     unittest.TestCase: TestCase class that helps in creating test class
     '''
 
-
     def setUp(self):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_user = User('Bambi', '1234') # create user object
-
+        self.new_user = User('Bambi', '1234@') # create user object
 
     def tearDown(self):  #code to be excecuted before each test case in order to clean up after each test case has run
             
         User.user_credentials = []
-
-
 
     def test_init(self):
         '''
@@ -29,8 +25,7 @@ class TestUser(unittest.TestCase):
         '''
 
         self.assertEqual(self.new_user.username,"Bambi")
-        self.assertEqual(self.new_user.password,"1234")
-
+        self.assertEqual(self.new_user.password,"1234@")
 
     def test_save_user(self):
         '''
@@ -39,7 +34,6 @@ class TestUser(unittest.TestCase):
 
         self.new_user.save_user()  #saving the user
         self.assertEqual(len(User.user_credentials), 1)
-
 
     def test_save_many_users(self):
         self.new_user.save_user()
@@ -55,11 +49,9 @@ class TestUser(unittest.TestCase):
 
         self.assertEqual(User.my_accounts(), User.user_credentials)
 
-
-
     def test_find_accounts(self):
         self.new_user.save_user()
-        test_user = User('Bambi', '1234')
+        test_user = User('Bambi', '1234@')
         test_user.save_user()
         found_account = User.find_by_username('Bambi')
         self.assertEqual(found_account.password, test_user.password)
@@ -73,27 +65,6 @@ class TestUser(unittest.TestCase):
         test_user.save_user()
         self.new_user.delete_accounts()  #deleteing a user object
         self.assertEqual(len(User.user_credentials), 1)
-
-
-
-from user import Credentials  #importing Credentials class
-
-class testCredentials(unittest.TestCase):
-     '''
-    Test class that defines test cases for the credentials class behaviours
-
-    unittest.TestCase: TestCase class that helps in creating test class
-    '''
-
-     def setup(self):
-        self.new_account = Credentials('Bambi', '1234')
-
-     def teardown(self):  #code to be excecuted before each test case in order to clean up after each test case has run
-         Credentials.user_createAccount = []
-
-
-
-
 
 if __name__ == '__main__':
     unittest.main()
