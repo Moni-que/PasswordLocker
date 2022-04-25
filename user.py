@@ -1,3 +1,4 @@
+import random #to generate random passwords
 class User:
     '''
     class that generates new instances of users
@@ -39,3 +40,6 @@ class User:
         method that deletes an account
         '''
         User.user_credentials.remove(self)
+
+
+
