@@ -59,11 +59,11 @@ class Credentials:
         self.username = username
         self.password = password
 
-    # def save_account(self):
-    #     '''
-    #     save the account in the user object
-    #     '''
-    #     Credentials.user_createAccount.append(self) 
+    def save_account(self):
+        '''
+        save the account in the user object
+        '''
+        Credentials.user_createAccount.append(self) 
 
 
     # def generate_password(self):
