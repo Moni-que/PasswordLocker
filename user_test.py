@@ -1,4 +1,3 @@
-from cgi import test
 import unittest   #importing the unittest module
 from user import User  #importing the User class
 
@@ -7,8 +6,7 @@ class TestUser(unittest.TestCase):
     '''
     Test class that defines test cases for the user class behaviours
 
-    Args:
-        unittest.TestCase: TestCase class that helps in creating test class
+    unittest.TestCase: TestCase class that helps in creating test class
     '''
 
 
@@ -75,6 +73,19 @@ class TestUser(unittest.TestCase):
         test_user.save_user()
         self.new_user.delete_accounts()  #deleteing a user object
         self.assertEqual(len(User.user_credentials), 1)
+
+
+
+from user import Credentials  #importing Credentials class
+class testCredentials(unittest.TestCase):
+     '''
+    Test class that defines test cases for the credentials class behaviours
+
+    unittest.TestCase: TestCase class that helps in creating test class
+    '''
+
+     def setup(self):
+        self.new_account = Credentials('Bambi', '1234')
 
 
 
