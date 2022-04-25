@@ -66,23 +66,23 @@ class Credentials:
         Credentials.user_createAccount.append(self) 
 
 
-    # def generate_password(self):
-    #     '''
-    #     generating a password
-    #     '''
-    #     password_characters = list(123456789 + '@!*&')  #characters to generate a password
+    def generate_password(self):
+        '''
+        generating a password
+        '''
+        password_characters = list(123456789 + '@!*&')  #characters to generate a password
 
-    #     password_length = int(input('create a password'))  #password's length
+        password_length = int(input('create a password'))  #password's length
 
-    #     random.shuffle(password_characters) #to shuffle characters
+        random.shuffle(password_characters) #to shuffle characters
 
-    #     password = []
-    #     for i in range(password_length):
-    #         password.append(random.choice(password_characters))  #generating random characters from the list
+        password = []
+        for i in range(password_length):
+            password.append(random.choice(password_characters))  #generating random characters from the list
 
-    #         random.shuffle(password)
+            random.shuffle(password)
 
-    #         print(password) #printing the password
+            print(password) #printing the password
 
     # @classmethod
     # def check_account(cls, username):
