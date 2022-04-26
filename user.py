@@ -15,6 +15,12 @@ class User:
         '''
         User.user_credentials.append(self)
 
+    def delete_accounts(self):
+        '''
+        method that deletes an account
+        '''
+        User.user_credentials.remove(self)
+        
     @classmethod
     def my_accounts(cls):
         '''
@@ -31,11 +37,6 @@ class User:
             if account.username == username:
                 return account 
 
-    def delete_accounts(self):
-        '''
-        method that deletes an account
-        '''
-        User.user_credentials.remove(self)
 
 
 
