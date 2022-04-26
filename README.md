@@ -2,6 +2,10 @@
 
 ### by Monicah Maina
 
+## screenshot of the application
+![Screenshot from 2022-04-26 08-10-24](https://user-images.githubusercontent.com/93192319/165226296-2a9d9333-7e41-4d13-b3df-ca6794c76dc5.png)
+
+
 ## Table Of content
 
 + [Description](#description)
